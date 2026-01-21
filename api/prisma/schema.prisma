@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  UserID      Int           @id @default(autoincrement())
+  Name        String
+  Email       String        @unique
+  Password    String
+  tasks_bambu tasks_bambu[]
+}
+
+model tasks_bambu {
+  TaskID      Int                  @id @default(autoincrement())
+  UserID      Int
+  Name        String
+  Priority    tasks_bambu_Priority
+  IsCompleted Boolean?             @default(false)
+  CreatedAt   DateTime?            @default(now())
+  UpdatedAt   DateTime?            @default(now())
+  users       users                @relation(fields: [UserID], references: [UserID])
+}
+
+enum tasks_bambu_Priority {
+  low
+  medium
+  high
+}
