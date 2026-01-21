@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es2017",  // Cambiado a es2017 para ser compatible con Node.js 10
+        "module": "commonjs",  // Cambiado a commonjs para ser compatible con Node.js 10
+        "outDir": "./dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}

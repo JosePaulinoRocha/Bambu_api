@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open usuarios.component.html",
+            "file": "c:\\Users\\Paulino\\Documents\\FunerariaDV\\FunerariaDV\\cliente\\FunerariaApp-main\\src\\app\\pages\\usuarios\\usuarios.component.html"
+        }
+    ]
+}

@@ -1,0 +1,282 @@
+{
+  "info": {
+    "_postman_id": "09154f4f-b9a4-40ca-a8f8-08faf92900bd",
+    "name": "Bambu_Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31497973",
+    "_collection_link": "https://go.postman.co/collection/31497973-09154f4f-b9a4-40ca-a8f8-08faf92900bd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Log In",
+      "item": [
+        {
+          "name": "http://localhost:3080/api/users/",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"Jose Paulino Rocha Martinez\",\r\n  \"Email\": \"josepaulinorocha890@gmail.com\",\r\n  \"Password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3080/api/users/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "users",
+                ""
+              ]
+            },
+            "description": "crear usuario"
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3080/api/usuarios/login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"josepaulinorocha890@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3080/api/auth/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "auth",
+                ""
+              ]
+            },
+            "description": "log in"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "http://localhost:3080/api/problems/",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjExLCJpYXQiOjE3NjkwMTkzOTAsImV4cCI6MTc2OTEwNTc5MH0.dgCnetvFu5YPq8StRiwI93ZbNtlObTwO4u6UX6tXSJE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tarea de prueba\",\r\n  \"priority\": \"high\",\r\n  \"isCompleted\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3080/api/problems/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "problems",
+                ""
+              ]
+            },
+            "description": "crear tarea"
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3080/api/problems",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjExLCJpYXQiOjE3NjkwMTkzOTAsImV4cCI6MTc2OTEwNTc5MH0.dgCnetvFu5YPq8StRiwI93ZbNtlObTwO4u6UX6tXSJE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3080/api/problems?page=1&limit=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "problems"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "obtener tareas"
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3080/api/problems/22",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjExLCJpYXQiOjE3NjkwMTkzOTAsImV4cCI6MTc2OTEwNTc5MH0.dgCnetvFu5YPq8StRiwI93ZbNtlObTwO4u6UX6tXSJE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"tarea actualizada\",\r\n  \"priority\": \"high\",\r\n  \"isCompleted\": true\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3080/api/problems/22",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "problems",
+                "22"
+              ]
+            },
+            "description": "actualizar tarea"
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3080/api/problems/22",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjExLCJpYXQiOjE3NjkwMTkzOTAsImV4cCI6MTc2OTEwNTc5MH0.dgCnetvFu5YPq8StRiwI93ZbNtlObTwO4u6UX6tXSJE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3080/api/problems/22",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "problems",
+                "22"
+              ]
+            },
+            "description": "obtener tarea por id"
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:3080/api/problems/22",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjExLCJpYXQiOjE3NjkwMTkzOTAsImV4cCI6MTc2OTEwNTc5MH0.dgCnetvFu5YPq8StRiwI93ZbNtlObTwO4u6UX6tXSJE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3080/api/problems/22",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3080",
+              "path": [
+                "api",
+                "problems",
+                "22"
+              ]
+            },
+            "description": "eliminar tarea"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
