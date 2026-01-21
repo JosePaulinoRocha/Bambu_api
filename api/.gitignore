@@ -3,9 +3,6 @@
 # Dependencias
 node_modules/
 
-# Variables de entorno
-.env
-
 # Logs
 logs/
 *.log
